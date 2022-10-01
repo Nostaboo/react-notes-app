@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactMarkdown from "react-markdown";
 
 const Main = ({ activeNote, onUpdateNote }) => {
@@ -13,7 +14,10 @@ const Main = ({ activeNote, onUpdateNote }) => {
 
   return ( 
     <div className="app-main">
-      <div className="app-main-note-edit">
+      <div className="app-main-header">
+        <h1>Markdown Notes</h1>
+      </div>
+        <div className="app-main-note-edit">
         <input 
           type="text"
           id="title"
