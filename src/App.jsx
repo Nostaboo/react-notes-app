@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import uuid from 'react-uuid';
 import './App.css';
@@ -14,7 +15,7 @@ function App() {
     localStorage.setItem('notes'.JSON.stringify(notes));
   }, [notes]);
 
-  const onAddNotes = () => {
+  const onAddNote = () => {
     const newNote = {
       id: uuid(),
       title: 'Untitled Note',
@@ -24,10 +25,6 @@ function App() {
 
     setNotes([newNote, ...notes]);
     setActiveNote(newNote.id);
-  };
-
-  const onDeleteNote = (noteId) => {
-    setNotes(notes.filter(({ id }) => id !== noteId));
   };
 
   const onDeleteNote = (noteId) => {
@@ -56,7 +53,7 @@ function App() {
         notes={notes}
         onAddNote={onAddNote}
         onDeleteNote={onDeleteNote}
-        activeNote={activenote}
+        activeNote={activeNote}
         activeNote={activeNote}
       />
       <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />

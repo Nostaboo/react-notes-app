@@ -36,6 +36,6 @@ const Main = ({ activeNote, onUpdateNote }) => {
       </div>
     </div>
   );
-);
+};
 
 export default Main;
